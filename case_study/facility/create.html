@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Service</title>
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet'>
+    <link rel="stylesheet" href="../myCss.css">
+</head>
+</head>
+<body>
+<div class="container-fluid w-75 ">
+    <div class="text-center m-5" style="font-family:Alice;font-size: 100px;color: #0a53be "><h2>Create new Facility</h2></div>
+    <div>
+        <form action="/facility?action=create" method="post" class="shadow-lg p-5" style="background-color:#DBF9FF">
+            <div class="mb-3">
+                <label for="name" class="form-label">Choose Create New Service</label>
+                <select onchange="choose()" id="select" class="form-select" name="choiceFacility">
+                    <option value="3">Villa</option>
+                    <option value="2">House</option>
+                    <option value="1">Room</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name :</label>
+                <input type="text" class="form-control" id="name" name="name" >
+            </div>
+            <div class="mb-3">
+                <label for="area" class="form-label">Area :</label>
+                <input type="number" class="form-control" id="area" name="area" >
+            </div>
+            <div class="mb-3">
+                <label for="cost" class="form-label">Cost</label>
+                <input type="number" class="form-control" id="cost" name="cost" >
+            </div>
+            <div class="mb-3">
+                <label for="max" class="form-label"> Max people</label>
+                <input type="number" class="form-control" id="max" name="maxPeople">
+            </div>
+            <div class="mb-3">
+                <label  class="form-label"> Choose Rent Type</label>
+                <select id="rent_type" class="form-select" name="rentTypeId" >
+                        <option>Year</option>
+                        <option>Month</option>
+                        <option>Day</option>
+                        <option>Hour</option>
+
+                </select>
+            </div>
+            <div class="mb-3" id="add" style="display: none">
+                <label for="standard_room" class="form-label">Standard_room :</label>
+                <input type="text" class="form-control" id="standard_room" name="standardRoom"
+                      >
+            </div>
+            <div class="mb-3" id="add1" style="display: none">
+                <label for="convenience" class="form-label">DescriptionOtherConvenience :</label>
+                <input type="text" class="form-control" id="convenience" name="descriptionOtherConvenience"
+                      >
+            </div>
+            <div class="mb-3" id="add2" style="display: none">
+                <label for="pool_area" class="form-label">Pool_area :</label>
+                <input type="number" class="form-control" id="pool_area" name="poolArea">
+            </div>
+            <div class="mb-3" id="add3" style="display: none">
+                <label for="floors" class="form-label">Number_of_floors :</label>
+                <input type="number" class="form-control" id="floors" name="numberOfFloors"
+                      >
+            </div>
+            <div class="mb-3" id="add4" style="display: none">
+                <label for="facility" class="form-label">Facility_free :</label>
+                <input type="text" class="form-control" id="facility" name="facilityFree"
+                      >
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit">Accept</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    function choose() {
+        let result = document.getElementById("select").value;
+        console.log(result)
+        switch (result) {
+            case "3":
+                document.getElementById("add").style.display = "none";
+                document.getElementById("add1").style.display = "none";
+                document.getElementById("add2").style.display = "none";
+                document.getElementById("add3").style.display = "none";
+                document.getElementById("add4").style.display = "block";
+                break;
+            case "2":
+                document.getElementById("add").style.display = "block";
+                document.getElementById("add1").style.display = "block";
+                document.getElementById("add2").style.display = "none";
+                document.getElementById("add3").style.display = "block";
+                document.getElementById("add4").style.display = "none";
+                break;
+            case "1":
+                document.getElementById("add").style.display = "block";
+                document.getElementById("add1").style.display = "block";
+                document.getElementById("add2").style.display = "block";
+                document.getElementById("add3").style.display = "block";
+                document.getElementById("add4").style.display = "none";
+                break;
+        }
+    }
+</script>
+<script src="../style/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
