@@ -7,13 +7,30 @@
     <link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet'>
     <link rel="stylesheet" href="../myCss.css">
+    <style>
+        body{
+            background-image: url("https://scr.vn/wp-content/uploads/2020/07/h%C3%ACnh-n%E1%BB%81n-ch%C3%BA-l%E1%BB%A3n-con.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        #form{
+            border-radius: 20px;
+            background-color: rgba(0,0,0,.5);
+        }
+        .form-label{
+            color: white;
+            font-weight: 300;
+        }
+    </style>
 </head>
 </head>
 <body>
 <div class="container-fluid w-75 ">
-    <div class="text-center m-5" style="font-family:Alice;font-size: 100px;color: #0a53be "><h2>Create new Facility</h2></div>
+    <div class="text-center m-5" style="font-family:Alice;font-size: 80px;color:white ; text-shadow:2px 2px 2px rgba(206,89,55,0)" >Create New Facility</div>
     <div>
-        <form action="/facility?action=create" method="post" class="shadow-lg p-5" style="background-color:#DBF9FF">
+        <form id="form" action="/facility?action=create" method="post" class="shadow-lg p-5">
             <div class="mb-3">
                 <label for="name" class="form-label">Choose Create New Service</label>
                 <select onchange="choose()" id="select" class="form-select" name="choiceFacility">

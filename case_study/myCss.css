@@ -8,3 +8,49 @@
 body {
     font-family: 'Asap';font-size: 20px;
 }
+#contact {
+    height: 50px;
+    width: 200px;
+    position: fixed;
+    z-index: 100;
+    background: #EEEEEE;
+    line-height: 50px;
+    border-radius: 24px;
+    padding: 0 5px;
+    margin-top: 830px;
+    margin-left: 30px;
+    box-shadow: 0 3px 3px #1e2125;
+
+}
+
+#phone #icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    position: relative;
+    padding: 10px;
+    background: dodgerblue;
+    animation: hehe 1.5s infinite;
+}
+
+#phone i {
+    color: white;
+    font-size: 24px;
+}
+
+#phone span {
+    font-weight: bolder;
+    padding: 0 10px;
+    color: blue;
+}
+
+@keyframes hehe {
+    from {
+        box-shadow: 1px 1px 1px 1px dodgerblue;
+        opacity: .7;
+    }
+    to {
+        box-shadow: 1px 1px 1px 10px #1E90FF;
+
+    }
+}
