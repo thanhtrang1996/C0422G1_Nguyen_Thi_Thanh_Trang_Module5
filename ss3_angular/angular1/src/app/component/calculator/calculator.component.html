@@ -1,0 +1,9 @@
+<input [(ngModel)] =' number1' type="number">
+<input [(ngModel)] = 'number2' type="number">
+<select [(ngModel)]="operand">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<p class="text-danger"> Total :{{calculator(number1,number2,operand)}}</p>
