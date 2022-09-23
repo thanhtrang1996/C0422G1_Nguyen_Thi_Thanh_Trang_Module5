@@ -8,6 +8,10 @@ import {FormsModule} from "@angular/forms";
 import { ProductComponent } from './component/product/product.component';
 import { CalculatorComponent } from './component/calculator/calculator.component';
 import { ColorComponent } from './component/color/color.component';
+import { ArticleComponent } from './component/article/article.component';
+import { LikeComponent } from './component/like/like.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { ColorComponent } from './component/color/color.component';
     PetComponent,
     ProductComponent,
     CalculatorComponent,
-    ColorComponent
+    ColorComponent,
+    ArticleComponent,
+    LikeComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

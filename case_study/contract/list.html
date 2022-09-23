@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Contract</title>
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alice' rel='stylesheet'>
+    <link rel="stylesheet" href="../myCss.css">
+    <style>
+        body{
+            background-image: url("https://ohayo.blog/wp-content/uploads/2021/12/Chidorigafuchi.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }
+        #form{
+            border-radius: 20px;
+            background-color: rgba(0,0,0,.5);
+        }
+        .form-label{
+            color: black;
+            font-weight: 300;
+        }
+        table{
+            background: rgba(255,255,255,0.3);
+        }
+
+        th,td{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+  <h1 style="font-family:Alice;font-size: 80px;color: #FA1FE5 " class="text-center m-5"> List Contract</h1>
+
+<div class="row">
+    <form action="/createContract"  method="post">
+
+        <button type="button" data-bs-toggle="modal" class=" btn btn-success"
+                data-bs-target="#createContract">
+            Create Contract
+        </button>
+        <div class="modal fade" id="createContract" tabindex="-1" aria-labelledby="exampleModalLabel2"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLabel2">Contract</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="h3 text-warning fw-bold">Do you want Create Contract ?</p>
+                        <div>
+                            <div>
+                                <label class="form-label">Facility Name:</label>
+                                <select  class="form-select">
+                                    <option value="">Villa</option>
+                                    <option value="">House</option>
+                                    <option value="">Room</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Customer Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div>
+                                <label class="form-label">Start Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div>
+                                <label class="form-label">End Date</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div>
+                                <label class="form-label">Deposit</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<table class="table table-hover text-white">
+    <thead>
+    <tr>
+        <th>No.</th>
+        <th>Facility</th>
+        <th>Customer</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Deposit</th>
+        <th>Total Money</th>
+        <th>Attach Facility</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>villa</td>
+        <td>Ba Van Ba</td>
+        <td>2000-12-09</td>
+        <td>2001-05-12</td>
+        <td>3</td>
+        <td>37633232</td>
+        <td>Attach Facility</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<script src="../style/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

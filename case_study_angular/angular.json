@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-show-pet-info": {
+    "angular-change-font-size": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-show-pet-info",
+            "outputPath": "dist/angular-change-font-size",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -44,6 +44,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -65,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-show-pet-info:build"
+            "browserTarget": "angular-change-font-size:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-show-pet-info:build:production"
+              "browserTarget": "angular-change-font-size:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-show-pet-info:build"
+            "browserTarget": "angular-change-font-size:build"
           }
         },
         "test": {
@@ -93,9 +94,9 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
@@ -117,15 +118,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-show-pet-info:serve"
+            "devServerTarget": "angular-change-font-size:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-show-pet-info:serve:production"
+              "devServerTarget": "angular-change-font-size:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "angular-show-pet-info"
+  "defaultProject": "angular-change-font-size"
 }
