@@ -1,0 +1,15 @@
+body{
+  background-image: url("https://cdn.vietnammoi.vn/2019/7/4/8-da-nangintercontienaljsomm-15622333736371071553178-crop-15623227684831253708709.jpg?width=600");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+#form{
+  border-radius: 20px;
+  background-color: rgba(0,0,0,.5);
+}
+.form-label{
+  color: white;
+  font-weight: 300;
+}
