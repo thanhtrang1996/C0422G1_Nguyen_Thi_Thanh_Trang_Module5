@@ -14,6 +14,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NameCardComponent } from './component/name-card/name-card.component';
 import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
+import { RatingBarComponent } from './component/rating-bar/rating-bar.component';
+import { CountdownTimerComponent } from './component/countdown-timer/countdown-timer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProgressBarComponent } from './component/progress-bar/progress-bar.comp
     NavbarComponent,
     FooterComponent,
     NameCardComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    RatingBarComponent,
+    CountdownTimerComponent
   ],
   imports: [
     BrowserModule,

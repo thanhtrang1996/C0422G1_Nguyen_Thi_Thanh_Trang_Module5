@@ -1,8 +1,9 @@
+
 <body>
 <div class="container-fluid w-75 ">
   <div class="text-center m-5" style="font-family:Alice;font-size: 80px;color:white ; text-shadow:2px 2px 2px rgba(206,89,55,0)" >Update Facility</div>
   <div>
-    <form id="form" action="/facility?action=create" method="post" class="shadow-lg p-5">
+    <form id="form" action="/facility?action=create" method="post" class="shadow-lg p-5" >
       <div class="mb-3">
         <label for="name" class="form-label">Choose Update Facility</label>
         <select  (change)="choose($event.target)" class="form-select" >
