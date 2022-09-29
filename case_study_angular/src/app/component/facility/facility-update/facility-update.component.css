@@ -1,15 +1,16 @@
 body {
   background-image: url("https://dulichkhampha24.com/wp-content/uploads/2020/07/resort-4sao-da-nang.jpg");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  /*background-position: center;*/
 }
 
-#form{
+#form {
   border-radius: 20px;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, .5);
 }
-.form-label{
+
+.form-label {
   color: white;
   font-weight: 300;
 }

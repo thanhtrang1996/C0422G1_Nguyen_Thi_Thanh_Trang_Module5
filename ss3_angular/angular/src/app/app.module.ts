@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PetComponent } from './component/pet/pet.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ProductComponent } from './component/product/product.component';
 import { CalculatorComponent } from './component/calculator/calculator.component';
 import { ColorComponent } from './component/color/color.component';
@@ -16,6 +16,9 @@ import { NameCardComponent } from './component/name-card/name-card.component';
 import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
 import { RatingBarComponent } from './component/rating-bar/rating-bar.component';
 import { CountdownTimerComponent } from './component/countdown-timer/countdown-timer.component';
+import { TodoComponent } from './component/todo/todo.component';
+import { FormComponent } from './component/form/form.component';
+import { UserFormComponent } from './component/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,16 @@ import { CountdownTimerComponent } from './component/countdown-timer/countdown-t
     NameCardComponent,
     ProgressBarComponent,
     RatingBarComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    TodoComponent,
+    FormComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

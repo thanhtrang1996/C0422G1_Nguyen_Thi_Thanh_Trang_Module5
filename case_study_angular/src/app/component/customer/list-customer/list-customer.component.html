@@ -1,5 +1,5 @@
-
-<div class="container-fluid" s>
+b
+<div class="container-fluid" >
   <h1 style="font-family:Alice;font-size: 80px;color: #210C3B" class="text-center m-5"> List Customer</h1>
   <table class="table table-hover ">
     <thead>
@@ -16,36 +16,22 @@
       <th>Update</th>
       <th>Delete</th>
       <th>Detail</th>
-    </tr>
+    </tr >
     </thead>
     <tbody>
-    <tr>
-      <th>1</th>
-      <th>Nguyễn Văn Hải</th>
-      <th>12/09/1998</th>
-      <th>Nam</th>
-      <th>757846772346</th>
-      <th>0917389233</th>
-      <th>Member</th>
-      <th>hai@gmail.com</th>
-      <th>Đà Nẵng</th>
-      <th class="text-warning">Update</th>
-      <th class="text-danger">Delete</th>
-      <th class="text-primary">Detail</th>
-    </tr>
-    <tr>
-      <th>2</th>
-      <th>Nguyễn Lê Thanh</th>
-      <th>12/05/1991</th>
-      <th>Nữ</th>
-      <th>213421472346</th>
-      <th>091744339233</th>
-      <th>Gold</th>
-      <th>thanhle@gmail.com</th>
-      <th>Quảng trị</th>
-      <th class="text-warning">Update</th>
-      <th class="text-danger">Delete</th>
-      <th class="text-primary">Detail</th>
+   <tr *ngFor="let customers of customer; let i = index">
+     <td>{{i+1}}</td>
+     <td>{{customers.name}}</td>
+     <td>{{customers.dateOfBirth}}</td>
+     <td>{{customers.gender}}</td>
+     <td>{{customers.idCard}}</td>
+     <td>{{customers.phone}}</td>
+     <td>{{customers.customerType.name}}</td>
+     <td>{{customers.email}}</td>
+     <td>{{customers.address}}</td>
+     <td class="text-warning">Update</td>
+     <td class="text-danger">Detele</td>
+     <td class="text-info">Detail</td>
     </tr>
     </tbody>
   </table>

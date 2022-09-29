@@ -1,0 +1,43 @@
+<div class=" text-center text-lg-start">
+  <div class="card mb-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="https://anhnendep.net/wp-content/uploads/2018/10/hinh-nen-chao-thang-10-hello-october-06.jpg" alt="No No"
+             class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+          <div >
+          <h1  class="text-center text-primary p-5">Login</h1>
+          </div>
+          <form [formGroup]="userForm" (ngSubmit)="onSummit()" novalidate *ngIf="userForm">
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1">Email address</label>
+              <input type="email" id="form2Example1" class="form-control" name="email" formControlName="email" />
+            </div>
+            <div class="text-danger" *ngIf="userForm.controls.email.touched &&userForm.controls.email.hasError('required')">
+              Email is required
+            </div>
+            <div class="text-danger" *ngIf="userForm.controls.email.touched && userForm.controls.email.hasError('email')">
+              Invalid Email
+            </div>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Password
+              </label>
+              <input type="password" id="form2Example2" class="form-control" name="password" formControlName="password"/>
+            </div>
+            <div class="text-danger" *ngIf="userForm.controls.password.touched &&userForm.controls.password.hasError('password')">
+              Password is required
+            </div>
+            <div class="text-danger" *ngIf="userForm.controls.password.touched && userForm.controls.password.hasError('password')">
+              Min Length 6
+            </div>
+            <button type="submit"[disabled]="!userForm.valid" class="btn btn-primary btn-block mb-4">Sign in</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

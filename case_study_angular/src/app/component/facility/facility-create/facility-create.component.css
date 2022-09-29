@@ -1,8 +1,8 @@
 body{
   background-image: url("https://danangaz.com/wp-content/uploads/2018/09/premier_optimized.jpg");
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  /*background-position: center;*/
 
 }
 #form{

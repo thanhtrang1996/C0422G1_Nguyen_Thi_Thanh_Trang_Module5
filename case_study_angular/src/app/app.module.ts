@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
 import { FacilityListComponent } from './component/facility/facility-list/facility-list.component';
 import { HomeComponent } from './component/home/home.component';
@@ -34,7 +34,8 @@ import { ListContractComponent } from './component/contract/list-contract/list-c
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+      ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

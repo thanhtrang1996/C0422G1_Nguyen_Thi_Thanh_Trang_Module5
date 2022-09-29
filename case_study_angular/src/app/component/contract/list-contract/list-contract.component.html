@@ -1,4 +1,3 @@
-
 <body>
 <div class="container">
   <h1 style="font-family:Alice;font-size: 80px;color: #210C3B" class="text-center m-5"> List Contract</h1>
@@ -72,27 +71,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>villa</td>
-      <td>Ba Van Ba</td>
-      <td>2000-12-09</td>
-      <td>2001-05-12</td>
-      <td>3</td>
-      <td>37633232</td>
-      <td><button type="button" class="btn btn-info">+</button></td>
-      <td><button type ="button" class="btn btn-info">Attach Facility</button></td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>House</td>
-      <td> Cao Ma Ma</td>
-      <td>2001-08-09</td>
-      <td>2001-10-23</td>
-      <td>2</td>
-      <td>33663232</td>
-      <td><button type="button" class="btn btn-info">+</button></td>
-      <td><button type ="button" class="btn btn-info">Attach Facility</button></td>
+    <tr *ngFor="let contracts of contract;let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{contracts.facility}}</td>
+      <td>{{contracts.customerName}}</td>
+      <td>{{contracts.startDate}}</td>
+      <td>{{contracts.endDate}}</td>
+      <td>{{contracts.deposit}}</td>
+      <td>{{contracts.total}}</td>
+      <td>
+        <button type="button" class="btn btn-info">+</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-info">Attach Facility</button>
+      </td>
     </tr>
     </tbody>
   </table>
