@@ -1,0 +1,24 @@
+<h1 class="text-center text-info">Danh sách sản phẩm</h1>
+<a routerLink="/product/create"  class="btn btn-primary">Tạo mới sản phẩm</a>
+<table class="table table-hover ">
+  <thead>
+  <tr >
+    <td>STT</td>
+    <td>Tên</td>
+    <td>Giá</td>
+    <td>Mô tả</td>
+    <td>Sửa</td>
+    <td>Xoá</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><a [routerLink]="['/product/update/',product.id] " class="btn btn-warning" >Sửa</a></td>
+    <td><a (click)="delete(product.id)"  class="btn btn-danger">Xoá</a></td>
+  </tr>
+  </tbody>
+</table>

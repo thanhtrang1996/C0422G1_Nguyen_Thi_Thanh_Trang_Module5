@@ -1,0 +1,42 @@
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-center text-danger">Cập nhật sản phẩm</h3>
+          <form class="form-signin" [formGroup]="productForm" (ngSubmit)="submit()" >
+            <div class="form-label-group">
+              <label for="id">Mã sản phẩm
+              </label>
+              <input type="text" id="id" class="form-control" name="id" formControlName="id">
+            </div>
+            <div class="form-label-group">
+              <label for="name">Tên sản phẩm</label>
+              <input type="text" id="name" class="form-control" name="name"
+                     formControlName="name">
+            </div>
+            <div class="form-label-group">
+              <label for="price">Giá sản phẩm</label>
+              <input type="text" id="price" class="form-control" name="price" formControlName="price">
+            </div>
+            <div class="form-label-group">
+              <label for="description">Mô tả sản phẩm</label>
+              <input type="text" id="description" class="form-control" name="description" formControlName="description">
+            </div>
+
+            <br>
+            <div class="text-center">
+              <button class="btn btn-primary " >Lưu thay đổi</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+

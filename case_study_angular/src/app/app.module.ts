@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FontSizeEditorComponent } from './font-size-editor/font-size-editor.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './component/header/header.component';
 import { FacilityListComponent } from './component/facility/facility-list/facility-list.component';
@@ -19,7 +18,6 @@ import { ListContractComponent } from './component/contract/list-contract/list-c
 @NgModule({
   declarations: [
     AppComponent,
-    FontSizeEditorComponent,
     HeaderComponent,
     FacilityListComponent,
     HomeComponent,

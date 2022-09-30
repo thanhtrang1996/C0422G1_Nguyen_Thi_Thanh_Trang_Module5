@@ -19,6 +19,11 @@ import { CountdownTimerComponent } from './component/countdown-timer/countdown-t
 import { TodoComponent } from './component/todo/todo.component';
 import { FormComponent } from './component/form/form.component';
 import { UserFormComponent } from './component/user-form/user-form.component';
+import { TimelinesComponent } from './component/timelines/timelines.component';
+import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-playlist.component';
+import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
+import { DictionaryComponent } from './component/dictionary/dictionary.component';
+import { DictionaryDetailComponent } from './component/dictionary-detail/dictionary-detail.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { UserFormComponent } from './component/user-form/user-form.component';
     CountdownTimerComponent,
     TodoComponent,
     FormComponent,
-    UserFormComponent
+    UserFormComponent,
+    TimelinesComponent,
+    YoutubePlaylistComponent,
+    YoutubePlayerComponent,
+    DictionaryComponent,
+    DictionaryDetailComponent
   ],
   imports: [
     BrowserModule,
