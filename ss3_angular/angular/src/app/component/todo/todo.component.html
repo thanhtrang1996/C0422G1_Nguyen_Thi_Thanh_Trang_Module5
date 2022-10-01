@@ -3,11 +3,20 @@
 </h2>
 <div class="col-md-8 offset-md-2">
   <input type="text" class="form-control" [formControl]="content" (change)="change()">
-  <ul>
-    <li (click)="toggleTodo(i)"
-        [class.complete]="todo.complete"
-        *ngFor="let todo of todos; index as i">
-      {{todo.content}}
-    </li>
-  </ul>
 </div>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>Content</th>
+    <th>Complete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let todo of todos; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{todo.content}}</td>
+    <td>{{todo.complete}}</td>
+  </tr>
+  </tbody>
+</table>

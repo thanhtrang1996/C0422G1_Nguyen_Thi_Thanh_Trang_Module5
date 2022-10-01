@@ -8,24 +8,26 @@
         </div>
         <div class="card-body">
           <h3 class="card-title text-center text-danger">Cập nhật sản phẩm</h3>
-          <form class="form-signin" [formGroup]="productForm" (ngSubmit)="submit()" >
-            <div class="form-label-group">
-              <label for="id">Mã sản phẩm
-              </label>
-              <input type="text" id="id" class="form-control" name="id" formControlName="id">
-            </div>
+          <form class="form-signin" [formGroup]="productForm" *ngIf="productForm" (ngSubmit)="submit(id)" >
             <div class="form-label-group">
               <label for="name">Tên sản phẩm</label>
-              <input type="text" id="name" class="form-control" name="name"
+              <input type="text" id="name" class="form-control"
                      formControlName="name">
             </div>
             <div class="form-label-group">
               <label for="price">Giá sản phẩm</label>
-              <input type="text" id="price" class="form-control" name="price" formControlName="price">
+              <input type="text" id="price" class="form-control"  formControlName="price">
             </div>
             <div class="form-label-group">
               <label for="description">Mô tả sản phẩm</label>
-              <input type="text" id="description" class="form-control" name="description" formControlName="description">
+              <input type="text" id="description" class="form-control"  formControlName="description">
+            </div>
+            <div class="form-label-group">
+              <label for="category">Thể loại</label>
+              <select  id="category" formControlName="category" class="form-select" >
+                <option *ngFor="let c of category" [ngValue]="c">{{c.name}}</option>
+              </select>
+
             </div>
 
             <br>

@@ -24,6 +24,7 @@ import { YoutubePlaylistComponent } from './component/youtube-playlist/youtube-p
 import { YoutubePlayerComponent } from './component/youtube-player/youtube-player.component';
 import { DictionaryComponent } from './component/dictionary/dictionary.component';
 import { DictionaryDetailComponent } from './component/dictionary-detail/dictionary-detail.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { DictionaryDetailComponent } from './component/dictionary-detail/diction
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

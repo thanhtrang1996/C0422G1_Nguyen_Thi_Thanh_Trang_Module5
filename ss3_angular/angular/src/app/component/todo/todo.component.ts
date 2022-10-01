@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Todo} from "./todo";
+import {Todo} from "../../model/todo";
+import {TodoService} from "../../service/todo.service";
 
 let _id = 1;
 
@@ -14,10 +15,13 @@ export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   content = new FormControl();
 
-  constructor() {
+  constructor(private todoService :TodoService) {
   }
 
   ngOnInit() {
+    this.todoService.getAll().subscribe(todo =>{
+      this.todos = todo;
+    });
   }
 
   toggleTodo(i: number) {

@@ -9,11 +9,6 @@
         <div class="card-body">
           <h3 class="card-title text-center text-danger">Tạo mới sản phẩm</h3>
           <form class="form-signin" [formGroup]="productForm" (ngSubmit)="submit()" >
-            <div class="form-label-group">
-              <label for="id">Mã sản phẩm
-              </label>
-              <input type="text" id="id" class="form-control" name="id" formControlName="id">
-            </div>
               <div class="form-label-group">
                 <label for="name">Tên sản phẩm</label>
                 <input type="text" id="name" class="form-control" name="name"
@@ -26,6 +21,13 @@
             <div class="form-label-group">
               <label for="description">Mô tả sản phẩm</label>
               <input type="text" id="description" class="form-control" name="description" formControlName="description">
+            </div>
+            <div class="form-label-group">
+              <label for="category">Thể loại</label>
+              <select  id="category" formControlName="category" class="form-select" >
+                <option *ngFor="let c of category" [ngValue]="c">{{c.name}}</option>
+              </select>
+
             </div>
 
             <br>

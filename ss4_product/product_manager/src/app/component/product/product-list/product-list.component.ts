@@ -9,19 +9,27 @@ import {Product} from '../../../model/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  deleteProduct :Product={};
+  id : number;
 
   constructor(private productService: ProductService) {
-    this.products = this.productService.getAll();
+
   }
 
   ngOnInit() {
+    this.productService.getAll().subscribe(product =>{
+      this.products = product
+    });
+  }
 
+  delete(id : number) {
+ this.productService.deleteProduct(id).subscribe(next=>{
+   this.ngOnInit()
+ });
   }
 
 
-
-
-  delete(id : number) {
- this.productService.deleteProduct(id);
+  getInfoToModal(product: Product) {
+    this.deleteProduct = product
   }
 }

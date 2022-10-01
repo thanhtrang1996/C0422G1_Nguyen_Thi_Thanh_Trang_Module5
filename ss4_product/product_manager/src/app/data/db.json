@@ -1,0 +1,68 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New",
+      "category": {
+        "id": 2,
+        "name": "android"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 2,
+        "name": "android"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 3,
+        "name": "blacktun"
+      }
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": 2,
+        "name": "android"
+      }
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8 8",
+      "price": 1234000,
+      "description": "98%",
+      "category": {
+        "id": 1,
+        "name": "ios"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "ios"
+    },
+    {
+      "id": 2,
+      "name": "android"
+    },
+    {
+      "id": 3,
+      "name": "blacktun"
+    }
+  ]
+}
