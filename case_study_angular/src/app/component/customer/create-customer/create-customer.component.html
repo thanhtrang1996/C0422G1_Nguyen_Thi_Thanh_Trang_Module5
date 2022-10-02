@@ -1,64 +1,96 @@
-
 <body>
-<div class="text-center m-5" style="font-family:Alice;font-size: 80px;color:#FA2F2F ; text-shadow:2px 2px 2px rgba(206,89,55,0)" >Create Customer</div>
-<div class="container  w-75" id = "form">
-  <form action="/createCustomer" method="post" >
+<div class="text-center m-5"
+     style="font-family:Alice;font-size: 80px;color:#FA2F2F ; text-shadow:2px 2px 2px rgba(206,89,55,0)">Create Customer
+</div>
+<div class="container  w-75" id="form">
+  <form [formGroup]="customerForm" (ngSubmit)="submit()">
     <div class="mb-3">
-      <label class="form-label">Id Customer:</label>
-      <input type="text" class="form-control" readonly>
+      <label class="form-label">Customer Code:</label>
+      <input type="text" class="form-control" formControlName="customerCode">
+    </div>
+    <div class="mb-3">
+      <div class="text-danger" *ngIf="!customerCode.valid && (customerCode.dirty || customerCode.touched)">
+        <div [hidden]="!customerCode.errors.required"> Customer Code is required !!!</div>
+        <div [hidden]="!customerCode.errors.pattern"> Invalid Customer Code!!!</div>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Name Customer:</label>
-      <input type="text" class="form-control" >
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <div class="text-danger" *ngIf="!nameCustomer.valid && (nameCustomer.dirty || nameCustomer.touched)">
+        <div [hidden]="!nameCustomer.errors.required">Name Customer is required !!!</div>
+        <div [hidden]="!nameCustomer.errors.pattern"> Invalid Customer Name !!!</div>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Birthday :</label>
-      <input type="date" class="form-control">
+      <input type="date" class="form-control" formControlName="dateOfBirth">
+    </div>
+    <div class="mb-3 text-danger" *ngIf="customerForm.controls.dateOfBirth.touched && customerForm.controls.dateOfBirth.hasError('required')">
+Date Of Birth is required !!!
     </div>
     <div class="mb-3">
       <label for="gender" class="form-label">Gender :</label>
-      <div><select id="gender" name="gender" class="form-control">
+      <div><select id="gender" name="gender" class="form-control" formControlName="gender">
         <option>Choose Gender</option>
-        <option value="1">Male</option>
-        <option value="0">Female</option>
+        <option>Male</option>
+        <option>Female</option>
       </select>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label"> Id_card :</label>
-      <input type="text" class="form-control" >
+      <input type="text" class="form-control" formControlName="idCard">
+    </div>
+    <div class="mb-3">
+      <div class="text-danger" *ngIf="!idCard.valid && (idCard.dirty || idCard.touched)">
+        <div [hidden]="!idCard.errors.required">Name Customer is required !!!</div>
+        <div [hidden]="!idCard.errors.minlength">  ID Card min 9 !!!</div>
+        <div [hidden]="!idCard.errors.maxlength">   ID Card  max 12 !!!</div>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Phone :</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="phone">
+    </div>
+    <div class="mb-3">
+      <div class="text-danger" *ngIf="!phone.valid && (phone.dirty || phone.touched)">
+        <div [hidden]="!phone.errors.required">Phone Number is required !!!</div>
+        <div [hidden]="!phone.errors.pattern"> Invalid Phone Number !!!</div>
+      </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Email :</label>
-      <input type="text" class="form-control" >
+      <input type="text" class="form-control" formControlName="email">
     </div>
-
+    <div class="mb-3">
+      <div class="text-danger" *ngIf="!email.valid && (email.dirty || email.touched)">
+        <div [hidden]="!email.errors.required">Email is required !!!</div>
+        <div [hidden]="!email.errors.email"> Invalid Email !!!</div>
+      </div>
+    </div>
     <div class="mb-3">
       <label class="form-label">Customer_type :</label>
       <div class="mb-3 ">
-        <select class="form-select" >
-          <option value="">Silver</option>
-          <option value="">Gold</option>
-          <option value="">Platinum</option>
-          <option value="">Diamond</option>
-          <option value="">Member</option>
+        <select type=text class="form-select" formControlName="customerType">
+          <option *ngFor="let c of customerType" [ngValue]="c">{{c.name}}</option>
         </select>
       </div>
     </div>
     <div class="mb-3">
       <label class="form-label">Address :</label>
-      <input type="text" class="form-control" >
+      <input type="text" class="form-control" formControlName="address">
+    </div>
+    <div class="mb-3 text-danger" *ngIf="customerForm.controls.address.touched && customerForm.controls.address.hasError('required')">
+      Address is required !!!
     </div>
     <div class="text-center">
-      <button class="btn btn-success m-3" type="submit">Save</button>
-      <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close
+      <button class="btn btn-success m-3"[disabled]="!customerForm.valid" type="submit">Save</button>
+      <button [routerLink]="['/customer/list']" type="button" class="btn btn-warning" data-bs-dismiss="modal">Back
       </button>
     </div>
   </form>
 </div>
-<script src="../style/bootstrap/bootstrap.min.js"></script>
 </body>

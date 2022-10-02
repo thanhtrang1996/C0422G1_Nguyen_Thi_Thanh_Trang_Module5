@@ -1,41 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HeaderComponent } from './component/header/header.component';
-import { FacilityListComponent } from './component/facility/facility-list/facility-list.component';
-import { HomeComponent } from './component/home/home.component';
-import { FooterComponent } from './component/footer/footer.component';
-import { FacilityCreateComponent } from './component/facility/facility-create/facility-create.component';
-import { FacilityUpdateComponent } from './component/facility/facility-update/facility-update.component';
-import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
-import { CreateCustomerComponent } from './component/customer/create-customer/create-customer.component';
-import { UpdateCustomerComponent } from './component/customer/update-customer/update-customer.component';
-import { ListContractComponent } from './component/contract/list-contract/list-contract.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './component/header/header.component';
+import {HomeComponent} from './component/home/home.component';
+import {FooterComponent} from './component/footer/footer.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FacilityListComponent,
     HomeComponent,
     FooterComponent,
-    FacilityCreateComponent,
-    FacilityUpdateComponent,
-    ListCustomerComponent,
-    CreateCustomerComponent,
-    UpdateCustomerComponent,
-    ListContractComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-      ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 2000,
+        closeButton: true,
+        progressBar: true,
+        positionClass: 'toast-top-center',
+        preventDuplicates: true
+      }
+    ),
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -10,6 +10,7 @@ export interface Customer {
   email?: string;
   address?: string;
   gender?:string;
+  customerCode?:string;
 
 
 }

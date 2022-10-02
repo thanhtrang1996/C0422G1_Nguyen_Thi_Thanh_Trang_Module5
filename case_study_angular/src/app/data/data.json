@@ -1,0 +1,186 @@
+{
+  "facility": [
+    {
+      "id": 1,
+      "name": "Phòng hướng vườn xanh mát",
+      "area": 100,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "year",
+      "status": " Phòng thoáng mát đầy đủ tiện nghi. Và khu vườn được chiếu sáng lãng mạn.",
+      "numberOfFloors": 1,
+      "img": "https://hotel84.com/hotel84-images/product/photo/Furama-Resort-Danang11.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Phòng vip rộng rãi quang đãng",
+      "area": 200,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "month",
+      "status": "Phòng rộng rãi đầy đủ mọi thứ với không gian ấm cúng",
+      "numberOfFloors": 3,
+      "img": "https://hotel84.com/hotel84-images/product/photo/Furama-Resort-Danang12.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Phòng hướng cửa sổ nhà hàng xóm",
+      "area": 100,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "hour",
+      "status": "Phòng này có thể nhìn sang phòng người khác nên khi ở thì phải cẩn thận. ",
+      "numberOfFloors": 2,
+      "img": "https://hotel84.com/hotel84-images/product/photo/Furama-Resort-Danang13.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Phòng view nhà gái xinh",
+      "area": 150,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "year",
+      "status": "gái hot girl nên phù hợp cho những bạn nam thích ngắm gái. Vào ban đêm, hồ bơi có gái.",
+      "numberOfFloors": 1,
+      "img": "https://sohanews.sohacdn.com/2018/10/15/photo-1-15396102537971877008816.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Phòng view nhà trai đẹp",
+      "area": 100,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "month",
+      "status": "trai ngầu nên phù hợp cho những bạn nam thích ngắm gái. Vào ban đêm, hồ bơi có trai",
+      "numberOfFloors": 1,
+      "img": "https://cdn.cet.edu.vn/wp-content/uploads/2019/04/khong-nen-chon-phong-cuoi.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Phòng view  đẹp mê hồn người",
+      "area": 220,
+      "cost": 100000,
+      "maxPeople": 5,
+      "rentType": "month",
+      "status": "phong cảnh đẹp nên phù hợp cho những bạn  thích ngắm cảnh đẹp mê hồn",
+      "numberOfFloors": 6,
+      "img": "https://hotel84.com/hotel84-images/product/photo/Furama-Resort-Danang16.jpg"
+    },
+    {
+      "name": "Phòng hướng nội",
+      "facilityType": "3",
+      "area": 14000,
+      "maxPeople": 3,
+      "cost": 900000,
+      "numberOfFloors": null,
+      "status": "phù hợp với những người thích sự khám phá nhưng yên tỉnh và không có sự làm phiền của người khác",
+      "rentType": null,
+      "img": "https://anhdepbonphuong.com/wp-content/uploads/2016/11/anh-thien-nhien-dep-lang-man-2-500x480.jpg",
+      "id": 8
+    }
+  ],
+  "customer": [
+    {
+      "customerType": {
+        "id": 5,
+        "name": "Diamond"
+      },
+      "name": "Trang Ngao",
+      "dateOfBirth": "2022-10-06",
+      "idCard": "11",
+      "phone": "090555568",
+      "email": "trangngao@gmail.com",
+      "address": "trang ngao",
+      "gender": "Male",
+      "customerCode": "KH-123",
+      "id": 1
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "facility": "Villa",
+      "customerName": "Lê Văn Hùng",
+      "startDate": "12-09-2001",
+      "endDate": "23-11-2001",
+      "deposit": 2,
+      "total": "23424566"
+    },
+    {
+      "id": 2,
+      "facility": "House",
+      "customerName": "Quang Văn Sách",
+      "startDate": "23-09-2002",
+      "endDate": "23-11-2002",
+      "deposit": 3,
+      "total": "44664566"
+    },
+    {
+      "id": 3,
+      "facility": "Room",
+      "customerName": " Hùng Thái Lê",
+      "startDate": "09-03-2001",
+      "endDate": "'12-5-2001",
+      "deposit": 4,
+      "total": "54353566"
+    },
+    {
+      "id": 4,
+      "facility": "Villa",
+      "customerName": "Tâm Hùng",
+      "startDate": "12-09-2001",
+      "endDate": "23-11-2001",
+      "deposit": 2,
+      "total": "23424566"
+    },
+    {
+      "id": 5,
+      "facility": "Room",
+      "customerName": "Văn Võ Song Toàn",
+      "startDate": "11-11-2011",
+      "endDate": "29-12-2011",
+      "deposit": 1,
+      "total": "44444566"
+    },
+    {
+      "id": 6,
+      "facility": "Villa",
+      "customerName": "Lê Thi Tâm",
+      "startDate": "09-09-2008",
+      "endDate": "23-11-2008",
+      "deposit": 2,
+      "total": "28888566"
+    },
+    {
+      "facility": "Villa",
+      "customerName": "thoi",
+      "startDate": "2022-10-04",
+      "endDate": "2022-10-19",
+      "deposit": 2,
+      "total": 453245,
+      "id": 7
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Gold"
+    },
+    {
+      "id": 2,
+      "name": "Member"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    },
+    {
+      "id": 4,
+      "name": "Platinum"
+    },
+    {
+      "id": 5,
+      "name": "Diamond"
+    }
+  ]
+}

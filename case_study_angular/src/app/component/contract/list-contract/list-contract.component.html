@@ -3,8 +3,7 @@
   <h1 style="font-family:Alice;font-size: 80px;color: #210C3B" class="text-center m-5"> List Contract</h1>
 
   <div class="row">
-    <form action="/createContract" method="post">
-
+    <form [formGroup]="contractForm" (ngSubmit)="submit()">
       <button type="button" data-bs-toggle="modal" class=" btn btn-success"
               data-bs-target="#createContract">
         Create Contract
@@ -23,33 +22,65 @@
               <div>
                 <div>
                   <label class="form-label">Facility Name:</label>
-                  <select class="form-select">
-                    <option value="">Villa</option>
-                    <option value="">House</option>
-                    <option value="">Room</option>
-                  </select>
+                  <input type="text" class="form-control" formControlName="facility">
+                </div>
+                <div>
+                  <div class="text-danger"
+                    *ngIf="contractForm.controls.facility.touched && contractForm.controls.facility.hasError('required')">
+                    Facility is required
+                  </div>
                 </div>
                 <div>
                   <label class="form-label">Customer Name</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" formControlName="customerName">
+                </div>
+                <div>
+                  <div class="text-danger"
+                    *ngIf="contractForm.controls.customerName.touched && contractForm.controls.customerName.hasError('required')">
+                    Customer Name is required
+                  </div>
                 </div>
                 <div>
                   <label class="form-label">Start Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" formControlName="startDate">
+                </div>
+                <div>
+                  <div class="text-danger"
+                    *ngIf="contractForm.controls.startDate.touched && contractForm.controls.startDate.hasError('required')">
+                    Start Date is required
+                  </div>
                 </div>
                 <div>
                   <label class="form-label">End Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" formControlName="endDate">
                 </div>
-
+                <div>
+                  <div class="text-danger" *ngIf="contractForm.controls.endDate.touched && contractForm.controls.endDate.hasError('required')">
+                    End Date is required
+                  </div>
+                </div>
                 <div>
                   <label class="form-label">Deposit</label>
-                  <input type="text" class="form-control">
+                  <input type="number" class="form-control" formControlName="deposit">
+                </div>
+                <div>
+                  <div  class="text-danger"*ngIf="contractForm.controls.deposit.touched && contractForm.controls.deposit.hasError('required')">
+                    Deposit is required
+                  </div>
+                </div>
+                <div>
+                  <label class="form-label">Total</label>
+                  <input type="number" class="form-control" formControlName="total">
+                </div>
+                <div>
+                  <div class="text-danger" *ngIf="contractForm.controls.total.touched && contractForm.controls.total.hasError('required')">
+                    Total is required
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
               </div>
             </div>
           </div>

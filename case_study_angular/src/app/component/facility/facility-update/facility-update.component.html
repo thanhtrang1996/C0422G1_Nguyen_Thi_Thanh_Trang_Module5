@@ -1,44 +1,72 @@
 
+
 <body>
 <div class="container-fluid w-75 ">
-  <div class="text-center m-5" style="font-family:Alice;font-size: 80px;color:white ; text-shadow:2px 2px 2px rgba(206,89,55,0)" >Update Facility</div>
+  <div class="text-center m-5" style="font-family:Alice;font-size: 80px;color:#0C233B ; text-shadow:2px 2px 2px rgba(206,89,55,0)" >Create New Facility</div>
   <div>
-    <form id="form" action="/facility?action=create" method="post" class="shadow-lg p-5" >
+    <form id="form" [formGroup]="facilityForm" (ngSubmit)="submit(id)" class="shadow-lg p-5">
       <div class="mb-3">
-        <label for="name" class="form-label">Choose Update Facility</label>
-        <select  (change)="choose($event.target)" class="form-select" >
+        <label  class="form-label">Choose Create New Facility</label>
+        <select  (change)="choose($event.target)" id="select" class="form-select" name="choiceFacility" formControlName="facilityType">
           <option value="" [selected]="true" [disabled]="true">Choose Facility</option>
           <option value="1">Villa</option>
           <option value="2">House</option>
           <option value="3">Room</option>
         </select>
       </div>
-
-      <div class="mb-3">
-        <label for="name" class="form-label">Name Customer:</label>
-        <input type="text" class="form-control" id="name" name="name" >
-      </div>
       <div class="mb-3">
         <label for="area" class="form-label">Area :</label>
-        <input type="number" class="form-control" id="area" name="area" >
+        <input type="number" class="form-control" id="area" name="area" formControlName="area">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.area.touched && facilityForm.controls.area.hasError('required')"> Area is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="a" class="form-label">Name  :</label>
+        <input type="text" class="form-control" id="a" name="area" formControlName="name">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.name.touched && facilityForm.controls.name.hasError('required')"> Area is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Status:</label>
+        <input type="text" class="form-control" id="status" name="area" formControlName="status">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.status.touched && facilityForm.controls.status.hasError('required')"> Area is required</div>
       </div>
       <div class="mb-3">
         <label for="cost" class="form-label">Cost</label>
-        <input type="number" class="form-control" id="cost" name="cost" >
+        <input type="number" class="form-control" id="cost" name="cost" formControlName="cost">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.cost.touched && facilityForm.controls.cost.hasError('required')"> Area is required</div>
       </div>
       <div class="mb-3">
         <label for="max" class="form-label"> Max people</label>
-        <input type="number" class="form-control" id="max" name="maxPeople">
+        <input type="number" class="form-control" id="max" name="maxPeople" formControlName="maxPeople">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.maxPeople.touched && facilityForm.controls.maxPeople.hasError('required')"> Area is required</div>
+      </div>
+      <div class="mb-3">
+        <label for="img" class="form-label"> IMG </label>
+        <input type="text" class="form-control" id="img" formControlName="img">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.img.touched && facilityForm.controls.img.hasError('required')"> Area is required</div>
       </div>
       <div class="mb-3">
         <label  class="form-label"> Choose Rent Type</label>
-        <select id="rent_type" class="form-select" name="rentTypeId" >
+        <select id="rent_type" class="form-select" name="rentTypeId" formControlName="rentType" >
           <option>Year</option>
           <option>Month</option>
           <option>Day</option>
           <option>Hour</option>
-
         </select>
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.rentType.touched && facilityForm.controls.rentType.hasError('required')"> Area is required</div>
       </div>
       <div class="mb-3" id="add" style="display: none">
         <label for="standard_room" class="form-label">Standard_room :</label>
@@ -56,8 +84,10 @@
       </div>
       <div class="mb-3" id="add3" style="display: none">
         <label for="floors" class="form-label">Number_of_floors :</label>
-        <input type="number" class="form-control" id="floors" name="numberOfFloors"
-        >
+        <input type="number" class="form-control" id="floors" name="numberOfFloors" formControlName="numberOfFloors">
+      </div>
+      <div>
+        <div class="text-danger" *ngIf="facilityForm.controls.numberOfFloors.touched && facilityForm.controls.numberOfFloors.hasError('required')"> Area is required</div>
       </div>
       <div class="mb-3" id="add4" style="display: none">
         <label for="facility" class="form-label">Facility_free :</label>
@@ -66,11 +96,10 @@
       </div>
       <div class="text-center">
         <button class="btn btn-success m-3" type="submit">Accept</button>
-        <button  class="btn btn-warning" type ="button" data-bs-dismiss="modal">Close
+        <button type="button" routerLink="/facility/list" class="btn btn-warning" >Close
         </button>
       </div>
     </form>
   </div>
 </div>
 </body>
-

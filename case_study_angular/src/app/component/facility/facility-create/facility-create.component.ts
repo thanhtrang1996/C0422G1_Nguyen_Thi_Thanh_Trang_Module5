@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FacilityService} from "../../../service/facility.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 declare var $: any;
 
 @Component({
@@ -7,10 +10,27 @@ declare var $: any;
   styleUrls: ['./facility-create.component.css']
 })
 export class FacilityCreateComponent implements OnInit {
+  facilityForm : FormGroup;
 
-  constructor() { }
+  constructor(private facilityService :FacilityService, private router :Router) {
+
+  }
+  createFacility(){
+    this.facilityForm = new FormGroup({
+      name : new FormControl('',[Validators.required]),
+      facilityType : new FormControl('',[Validators.required]),
+      area : new FormControl('',[Validators.required]),
+      maxPeople : new FormControl('',[Validators.required]),
+      cost : new FormControl('',[Validators.required]),
+      numberOfFloors : new FormControl('',[Validators.required]),
+      status : new FormControl('',[Validators.required]),
+      rentType : new FormControl('',[Validators.required]),
+      img : new FormControl('',[Validators.required]),
+    })
+  }
 
   ngOnInit() {
+    this.createFacility();
   }
    choose() {
     let result = $('#select').val();
@@ -39,4 +59,12 @@ export class FacilityCreateComponent implements OnInit {
     }
   }
 
+  submit() {
+    const facility = this.facilityForm.value;
+    this.facilityService.saveFacility(facility).subscribe(()=>{
+      this.router.navigateByUrl('/facility/list');
+    },error => {
+      console.log(error);
+    })
+  }
 }

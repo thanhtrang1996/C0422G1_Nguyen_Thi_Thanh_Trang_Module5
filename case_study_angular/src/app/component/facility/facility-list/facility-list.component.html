@@ -3,7 +3,7 @@
   <h1 style="font-family:Alice;font-size: 80px;color: #0a53be " class="text-center "> List facility</h1>
 </div>
 <div class="container-fluid">
-
+  <a [routerLink]="['/facility/create']" class="btn btn-primary m-3">Create Facility</a>
 </div>
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -19,7 +19,8 @@
           <p class="card-text">
             {{item.status}}</p>
         </div>
-        <div class="text-center m-3"><a href="#" class="btn btn-warning m-2">Update</a><a href="#" class="btn btn-primary">Detail</a></div>
+        <div class="text-center m-3"><a [routerLink]="['/facility/update',item.id]" class="btn btn-warning m-2">Update</a>
+          <a href="#" class="btn btn-primary">Detail</a></div>
       </div>
     </div>
     </div>

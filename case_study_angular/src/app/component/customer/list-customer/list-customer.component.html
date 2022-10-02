@@ -1,15 +1,19 @@
-b
 <div class="container-fluid" >
   <h1 style="font-family:Alice;font-size: 80px;color: #210C3B" class="text-center m-5"> List Customer</h1>
+  <a [routerLink]="['/customer/create']" class="btn btn-primary m-3">Create Customer</a>
+  <form class="d-flex" [formGroup]="searchForm" (ngSubmit)="onSearch()" *ngIf="searchForm">
+    <input class="form-control me-2" type="text" placeholder="Name" formControlName="name">
+    <input class="form-control me-2" type="text" placeholder="Email" formControlName="email">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
   <table class="table table-hover ">
     <thead>
     <tr style="color:#9f01fa ">
       <th>No.</th>
+      <th>Customer Code</th>
       <th>Name</th>
       <th>Birthday</th>
       <th>Gender</th>
-      <th>IdCard</th>
-      <th>Phone</th>
       <th>CustomerType</th>
       <th>Email</th>
       <th>Address</th>
@@ -19,20 +23,72 @@ b
     </tr >
     </thead>
     <tbody>
-   <tr *ngFor="let customers of customer; let i = index">
+   <tr *ngFor="let customers of customer | paginate: { itemsPerPage: 4, currentPage: page }, index as i">
      <td>{{i+1}}</td>
+     <td>{{customers.customerCode}}</td>
      <td>{{customers.name}}</td>
      <td>{{customers.dateOfBirth}}</td>
      <td>{{customers.gender}}</td>
-     <td>{{customers.idCard}}</td>
-     <td>{{customers.phone}}</td>
      <td>{{customers.customerType.name}}</td>
      <td>{{customers.email}}</td>
      <td>{{customers.address}}</td>
-     <td class="text-warning">Update</td>
-     <td class="text-danger">Detele</td>
-     <td class="text-info">Detail</td>
+     <td><a [routerLink]="['update/',customers.id]" class="btn btn-warning">Update</a></td>
+     <td><button type="button"  class="btn btn-danger" data-bs-toggle="modal" (click)="getInfoToModal(customers)" data-bs-target="#exampleModal">
+       Delete
+     </button></td>
+     <td><button type="button"  class="btn btn-info" data-bs-toggle="modal" (click)="getInfoToModal(customers)" data-bs-target="#detail">
+       Detail
+     </button></td>
     </tr>
     </tbody>
   </table>
+</div>
+<div class="container-fluid mt-3">
+  <div class="pagination float-end">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Customer Code: {{customerF.customerCode}}</p>
+        <p>Name Customer: {{customerF.name}}</p>
+        <p>Address Customer: {{customerF.address}}</p>
+       Are you sure delete ??
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close</button>
+        <button type="button" class="btn btn-primary"  (click)="deleteCustomer(customerF.id)"  data-bs-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade " id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header   ">
+        <h3 class="modal-title text-danger text-center " id="exampleModalLabel1">Detail Customer</h3>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 ">
+          <b >Name Customer : {{customerF.name}}</b><br>
+          <b >Name Customer : {{customerF.customerCode}}</b><br>
+          <b >Date Of Birth : {{customerF.dateOfBirth}}</b><br>
+          <b >Gender : {{customerF.gender}}</b><br>
+          <b >Id Card : {{customerF.idCard}}</b><br>
+          <b>Phone : {{customerF.phone}}</b><br>
+          <b>Email : {{customerF.email}}</b><br>
+          <b >Address : {{customerF.address}}</b>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

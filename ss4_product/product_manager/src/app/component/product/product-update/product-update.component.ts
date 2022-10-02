@@ -23,7 +23,6 @@ export class ProductUpdateComponent implements OnInit {
               private categoryService: CategoryService,) {
     activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-
     })
     this.categoryService.getAll().subscribe(data => {
       this.category = data;
