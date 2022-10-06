@@ -11,6 +11,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { CategoryListComponent } from './component/category/category-list/category-list.component';
 import { CategoryCreateComponent } from './component/category/category-create/category-create.component';
 import { CategoryUpdateComponent } from './component/category/category-update/category-update.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,18 @@ import { CategoryUpdateComponent } from './component/category/category-update/ca
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+      NgxPaginationModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot(
+        {
+          timeOut: 2000,
+          closeButton: true,
+          progressBar: true,
+          positionClass: 'toast-top-center',
+          preventDuplicates: true
+        }
+      ),
     ],
   providers: [],
   bootstrap: [AppComponent]

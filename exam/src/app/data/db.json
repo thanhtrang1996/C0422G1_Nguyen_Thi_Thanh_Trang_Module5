@@ -1,0 +1,122 @@
+{
+  "quanLy": [
+    {
+      "id": 1,
+      "soXe": "123",
+      "loaiXe": "Xe Giường Nằm",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "diemDen": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "soDienThoai": "0913221344",
+      "email": "mai@gmail",
+      "gioDi": "12:00",
+      "gioDen": "16:30"
+    },
+    {
+      "id": 2,
+      "soXe": "1211",
+      "loaiXe": "Xe Giường Nằm",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "diemDen": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "soDienThoai": "0913221344",
+      "email": "mai@gmail",
+      "gioDi": "12:00",
+      "gioDen": "16:30"
+    },
+    {
+      "id": 3,
+      "soXe": "1211",
+      "loaiXe": "Xe Giường Nằm",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "diemDen": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "soDienThoai": "0913221344",
+      "email": "mai@gmail",
+      "gioDi": "12:00",
+      "gioDen": "16:30"
+    },
+    {
+      "id": 4,
+      "soXe": "1211",
+      "loaiXe": "Xe Giường Nằm",
+      "tenNhaXe": "Mai Linh",
+      "diemDi": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "diemDen": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "soDienThoai": "0913221344",
+      "email": "mai@gmail",
+      "gioDi": "12:00",
+      "gioDen": "16:30"
+    },
+    {
+      "id": 5,
+      "soXe": "1211",
+      "loaiXe": "Xe Giường Nằm",
+      "tenNhaXe": "Tan Tai",
+      "diemDi": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "diemDen": {
+        "id": 1,
+        "name": "Quảng Trị"
+      },
+      "soDienThoai": "091366566",
+      "email": "tratar@gmail",
+      "gioDi": "12:00",
+      "gioDen": "16:35"
+    }
+  ],
+  "diemDi": [
+    {
+      "id": 1,
+      "name": "Quảng Trị"
+    },
+    {
+      "id": 1,
+      "name": "Quảng Nam"
+    },
+    {
+      "id": 1,
+      "name": "Quảng Ngãi"
+    }
+  ],
+  "diemDen": [
+    {
+      "id": 1,
+      "name": "Quảng Trị"
+    },
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 1,
+      "name": "Quảng Nam"
+    }
+  ]
+}

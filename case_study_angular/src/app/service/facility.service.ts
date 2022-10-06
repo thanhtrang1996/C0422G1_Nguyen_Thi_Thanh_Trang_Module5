@@ -28,5 +28,7 @@ export class FacilityService {
   deleteCustomer(id: number): Observable<any> {
     return this.http.delete(`${API_URL}/facility/${id}`);
   }
-
+searchFacility(name : string):Observable<any>{
+  return this.http.get(API_URL + `/facility?name_like=${name}`);
+}
 }

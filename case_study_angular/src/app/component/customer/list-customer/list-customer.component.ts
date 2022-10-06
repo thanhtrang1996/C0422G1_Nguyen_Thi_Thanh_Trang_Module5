@@ -12,7 +12,7 @@ import {ToastrService} from "ngx-toastr";
 export class ListCustomerComponent implements OnInit {
   customer: Customer[] = [];
   customerF: Customer = {};
-  page: number = 0;
+  page: number = 1;
   searchForm: FormGroup;
   searchObj: any = {
     name: '',
@@ -45,10 +45,9 @@ export class ListCustomerComponent implements OnInit {
   deleteCustomer(id: number) {
     this.customerService.deleteCustomer(id).subscribe(next => {
       this.getAllCustomer(this.searchObj);
+      this.toastrService.success("Delete success !")
     }, error => {
       console.log(error);
-    }, () => {
-      this.toastrService.success("Delete success !")
     })
   }
 

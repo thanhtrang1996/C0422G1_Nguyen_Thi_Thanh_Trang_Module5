@@ -12,4 +12,7 @@ export class CustomerTypeService {
   getAll():Observable<any>{
     return this.http.get(API_URL +'/customerType');
   }
+  findById(id:number):Observable<any>{
+    return this.http.get(`${API_URL}/customerType/${id}`)
+  }
 }

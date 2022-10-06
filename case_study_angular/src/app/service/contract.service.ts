@@ -12,7 +12,7 @@ export class ContractService {
 
   constructor(private http : HttpClient) { }
   getAll(): Observable<any> {
-    return this.http.get(API_URL + '/contract');
+    return this.http.get('http://localhost:8080/contractRest/list')
   }
 
   saveContract(contract): Observable<any> {

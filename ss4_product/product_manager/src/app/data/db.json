@@ -42,12 +42,42 @@
     },
     {
       "id": 4,
-      "name": "IPhone 8 8",
+      "name": "IPhone 8 ",
       "price": 1234000,
       "description": "98%",
       "category": {
         "id": 1,
         "name": "ios"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Iphone xxx",
+      "price": "123134",
+      "description": "Đẹp quá",
+      "category": {
+        "id": 4,
+        "name": "aaaa"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Sam Sum",
+      "price": "21525",
+      "description": "98%",
+      "category": {
+        "id": 2,
+        "name": "android"
+      }
+    },
+    {
+      "id": 8,
+      "name": "fgsadfga",
+      "price": "gadfgadf",
+      "description": "gfdgsadf",
+      "category": {
+        "id": 3,
+        "name": "blacktun"
       }
     }
   ],
@@ -63,6 +93,10 @@
     {
       "id": 3,
       "name": "blacktun"
+    },
+    {
+      "id": 4,
+      "name": "aaaa"
     }
   ]
 }

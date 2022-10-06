@@ -1,0 +1,97 @@
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+        </div>
+        <div class="card-body">
+          <h3 class="card-title text-center text-danger">Cập nhật danh sách</h3>
+          <form class="form-signin" [formGroup]="quanLyForm" *ngIf="quanLyForm" (ngSubmit)="submit()"  >
+            <input type="text" hidden formGroupName="id">
+            <div class="form-label-group">
+              <label for="so1">Số Xe</label>
+              <input type="text"  readonly id="so1" class="form-control"  formControlName="soXe">
+            </div>
+            <div class="form-label-group">
+              <label for="loai">Loại Xe</label>
+              <input type="text" id="loai" class="form-control"  formControlName="loaiXe">
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.loaiXe.touched && quanLyForm.controls.loaiXe.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <div class="form-label-group">
+              <label for="ten">Tên nhà Xe</label>
+              <input type="text" id="ten" class="form-control"  formControlName="tenNhaXe">
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.tenNhaXe.touched && quanLyForm.controls.tenNhaXe.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <div class="form-label-group" formGroupName="diemDi">
+              <label for="di">Điểm Đi </label>
+              <select  id="di" formControlName="id" class="form-select" >
+                <option value ="" [disabled]="true">Chọn điểm đi</option>
+                <option *ngFor="let di of diemDi" [ngValue]="di.id">{{di.name}}</option>
+              </select>
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.diemDi.touched && quanLyForm.controls.diemDi.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <div class="form-label-group" formGroupName="diemDen">
+              <label for="diem">Điểm Đến </label>
+              <select  id="diem" formControlName="id" class="form-select" >
+                <option value ="" [disabled]="true">Chọn điểm đến</option>
+                <option *ngFor="let den of diemDen" [ngValue]="den.id">{{den.name}}</option>
+              </select>
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.diemDen.touched && quanLyForm.controls.diemDen.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <div class="form-label-group">
+              <label for="so">Số Điện Thoại</label>
+              <input type="text" id="so" class="form-control"  formControlName="soDienThoai">
+            </div>
+            <div class="mb-3">
+              <div class="text-danger" *ngIf="!soDienThoai.valid && (soDienThoai.dirty || soDienThoai.touched)">
+                <div [hidden]="!soDienThoai.errors.required">Bạn không được để trống !!!</div>
+                <div [hidden]="!soDienThoai.errors.pattern"> Phải nhập đúng định dạng !!!</div>
+              </div>
+            </div>
+            <div class="form-label-group">
+              <label for="email">Email</label>
+              <input type="text" id="email" class="form-control"  formControlName="email">
+            </div>
+            <div class="mb-3">
+              <div class="text-danger" *ngIf="!email.valid && (email.dirty || email.touched)">
+                <div [hidden]="!email.errors.required">Bạn không được để trống !!!</div>
+                <div [hidden]="!email.errors.email">Phải nhập đúng định dạng !!!</div>
+              </div>
+            </div>
+            <div class="form-label-group">
+              <label for="gio">Giờ Đi</label>
+              <input type="time" id="gio" class="form-control"  formControlName="gioDi">
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.gioDi.touched && quanLyForm.controls.gioDi.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <div class="form-label-group">
+              <label for="gioDen">Giờ Đến</label>
+              <input type="time" id="gioDen" class="form-control"  formControlName="gioDen">
+            </div>
+            <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.gioDen.touched && quanLyForm.controls.gioDen.hasError('required')">
+              Bạn không được để trống !!!
+            </div>
+            <br>
+            <div class="text-center">
+              <button class="btn btn-primary" type="submit">Lưu thay đổi</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+

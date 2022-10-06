@@ -39,12 +39,10 @@ export class CreateCustomerComponent implements OnInit {
       address: new FormControl('', [Validators.required]),
       gender: new FormControl(),
       customerCode: new FormControl('', [Validators.required, Validators.pattern("^(KH-[0-9]+)$")])
-
     })
   }
 
   submit() {
-
     if (this.customerForm.valid) {
       const customer = this.customerForm.value;
       this.customerService.saveCustomer(customer).subscribe(next => {
@@ -55,7 +53,7 @@ export class CreateCustomerComponent implements OnInit {
         console.log(error)
       })
     } else {
-      this.toastrService.warning("Trang ngáo!")
+      this.toastrService.warning("Warning!")
     }
   }
 

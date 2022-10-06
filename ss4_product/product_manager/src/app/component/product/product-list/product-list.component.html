@@ -1,8 +1,15 @@
 <h1 class="text-center text-info">Danh sách sản phẩm</h1>
-<a routerLink="/product/create"  class="btn btn-primary">Tạo mới sản phẩm</a>
+<a routerLink="/product/create" class="btn btn-primary  m-2">Tạo mới sản phẩm</a>
+<form class="d-flex" [formGroup]="searchForm" (ngSubmit)="onSearch()" *ngIf="searchForm">
+  <div class="d-flex justify-content-end">
+    <input class="form-control me-2" type="text" placeholder="Name" formControlName="name">
+    <input class="form-control me-2" type="text" placeholder="Price" formControlName="price">
+  </div>
+  <button class="btn btn-primary" type="submit">Search</button>
+</form>
 <table class="table table-hover ">
   <thead>
-  <tr >
+  <tr>
     <th>STT</th>
     <th>Tên</th>
     <th>Giá</th>
@@ -13,19 +20,27 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let product of products; index as i">
-    <td>{{i + 1}}</td>
+  <tr *ngFor="let product of products | paginate :{itemsPerPage :4,currentPage:page },index as i">
+    <td>{{(page-1)*4 +i + 1}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>{{product.category.name}}</td>
-    <td><a [routerLink]="['/product/update/',product.id] " class="btn btn-warning" >Sửa</a></td>
-    <td><button type="button"  class="btn btn-danger" data-bs-toggle="modal" (click)="getInfoToModal(product)" data-bs-target="#exampleModal">
-      Xoá
-    </button></td>
+    <td><a [routerLink]="['/product/update/',product.id] " class="btn btn-warning">Sửa</a></td>
+    <td>
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="getInfoToModal(product)"
+              data-bs-target="#exampleModal">
+        Xoá
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>
+<div class="container-fluid mt-3">
+  <div class="pagination float-end">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -34,14 +49,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>id: {{deleteProduct.id}}</p>
-        <p>name: {{deleteProduct.name}}</p>
-        <p>price: {{deleteProduct.price}}</p>
-       Bạn chắc chắn muốn xoá không ?
+        <p>Tên Sản phẩm: {{deleteProduct.name}}</p>
+        <p>Giá của sản phẩm: {{deleteProduct.price}}</p>
+        Bạn chắc chắn muốn xoá không ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Quay lại</button>
-        <button type="button" class="btn btn-primary"  (click)="delete(deleteProduct.id)"  data-bs-dismiss="modal">Vâng</button>
+        <button type="button" class="btn btn-primary" (click)="delete(deleteProduct.id)" data-bs-dismiss="modal">Vâng
+        </button>
       </div>
     </div>
   </div>

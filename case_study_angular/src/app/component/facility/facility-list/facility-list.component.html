@@ -2,6 +2,10 @@
 <div class="container">
   <h1 style="font-family:Alice;font-size: 80px;color: #0a53be " class="text-center "> List facility</h1>
 </div>
+<div>
+  <input class="form-control me-2" type="text" placeholder="Name" #name>
+  <button (click)="search(name.value)">Search</button>
+</div>
 <div class="container-fluid">
   <a [routerLink]="['/facility/create']" class="btn btn-primary m-3">Create Facility</a>
 </div>

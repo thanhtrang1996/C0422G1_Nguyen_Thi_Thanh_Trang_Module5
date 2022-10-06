@@ -24,7 +24,7 @@
     </thead>
     <tbody>
    <tr *ngFor="let customers of customer | paginate: { itemsPerPage: 4, currentPage: page }, index as i">
-     <td>{{i+1}}</td>
+     <td>{{(page-1)*4 + i+1}}</td>
      <td>{{customers.customerCode}}</td>
      <td>{{customers.name}}</td>
      <td>{{customers.dateOfBirth}}</td>
@@ -32,7 +32,7 @@
      <td>{{customers.customerType.name}}</td>
      <td>{{customers.email}}</td>
      <td>{{customers.address}}</td>
-     <td><a [routerLink]="['update/',customers.id]" class="btn btn-warning">Update</a></td>
+     <td><a [routerLink]="['/customer/update/',customers.id]" class="btn btn-warning">Update</a></td>
      <td><button type="button"  class="btn btn-danger" data-bs-toggle="modal" (click)="getInfoToModal(customers)" data-bs-target="#exampleModal">
        Delete
      </button></td>
@@ -54,8 +54,8 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Customer</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+      </div >
+      <div class="modal-body text-danger">
         <p>Customer Code: {{customerF.customerCode}}</p>
         <p>Name Customer: {{customerF.name}}</p>
         <p>Address Customer: {{customerF.address}}</p>
@@ -71,13 +71,13 @@
 <div class="modal fade " id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header   ">
+      <div class="modal-header">
         <h3 class="modal-title text-danger text-center " id="exampleModalLabel1">Detail Customer</h3>
       </div>
       <div class="modal-body">
         <div class="mb-3 ">
           <b >Name Customer : {{customerF.name}}</b><br>
-          <b >Name Customer : {{customerF.customerCode}}</b><br>
+          <b >Code Customer : {{customerF.customerCode}}</b><br>
           <b >Date Of Birth : {{customerF.dateOfBirth}}</b><br>
           <b >Gender : {{customerF.gender}}</b><br>
           <b >Id Card : {{customerF.idCard}}</b><br>

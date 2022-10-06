@@ -19,4 +19,11 @@ export class FacilityListComponent implements OnInit {
     })
   }
 
+
+  search(name: any) {
+   this.facilityService.searchFacility(name).subscribe(data=>{
+     this.facility = data;
+   })
+
+  }
 }

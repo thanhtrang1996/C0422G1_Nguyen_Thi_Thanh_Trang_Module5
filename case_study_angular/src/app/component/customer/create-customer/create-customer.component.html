@@ -3,7 +3,7 @@
      style="font-family:Alice;font-size: 80px;color:#FA2F2F ; text-shadow:2px 2px 2px rgba(206,89,55,0)">Create Customer
 </div>
 <div class="container  w-75" id="form">
-  <form [formGroup]="customerForm" (ngSubmit)="submit()">
+  <form [formGroup]="customerForm" (ngSubmit)="submit()" *ngIf="customerForm">
     <div class="mb-3">
       <label class="form-label">Customer Code:</label>
       <input type="text" class="form-control" formControlName="customerCode">
@@ -33,8 +33,8 @@ Date Of Birth is required !!!
     </div>
     <div class="mb-3">
       <label for="gender" class="form-label">Gender :</label>
-      <div><select id="gender" name="gender" class="form-control" formControlName="gender">
-        <option>Choose Gender</option>
+      <div><select id="gender" name="gender" class="form-select" formControlName="gender">
+        <option [selected]="true" [disabled]="true">Choose Gender</option>
         <option>Male</option>
         <option>Female</option>
       </select>
@@ -72,9 +72,10 @@ Date Of Birth is required !!!
       </div>
     </div>
     <div class="mb-3">
-      <label class="form-label">Customer_type :</label>
+      <label class="form-label" for="customerType">Customer_type :</label>
       <div class="mb-3 ">
-        <select type=text class="form-select" formControlName="customerType">
+        <select type=text class="form-select" id="customerType" name="customerType" formControlName="customerType">
+          <option [selected]="true" [disabled]="true">Choose customer type</option>
           <option *ngFor="let c of customerType" [ngValue]="c">{{c.name}}</option>
         </select>
       </div>

@@ -82,18 +82,63 @@
   "customer": [
     {
       "customerType": {
-        "id": 5,
-        "name": "Diamond"
+        "id": 4,
+        "name": "Platinum"
       },
       "name": "Trang Ngao",
       "dateOfBirth": "2022-10-06",
-      "idCard": "11",
+      "idCard": "117367777",
       "phone": "090555568",
       "email": "trangngao@gmail.com",
       "address": "trang ngao",
       "gender": "Male",
       "customerCode": "KH-123",
       "id": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      },
+      "name": "Trang Trần",
+      "dateOfBirth": "1996-09-29",
+      "idCard": "0122833455",
+      "phone": "090432333",
+      "email": "trang@gmail",
+      "address": "Hà nội",
+      "gender": "Male",
+      "customerCode": "KH-001",
+      "id": 2
+    },
+    {
+      "customerType": {
+        "id": 4,
+        "name": "Platinum"
+      },
+      "name": "Trang Aa",
+      "dateOfBirth": "2004-10-18",
+      "idCard": "8409294444",
+      "phone": "091098944",
+      "email": "hang@gmail",
+      "address": "Quảng Trị",
+      "gender": "Male",
+      "customerCode": "KH-002",
+      "id": 4
+    },
+    {
+      "customerType": {
+        "id": 5,
+        "name": "Diamond"
+      },
+      "name": "Nguyen Thi Tha",
+      "dateOfBirth": "2022-11-04",
+      "idCard": "542134536",
+      "phone": "090423423",
+      "email": "tha@gmail",
+      "address": "Quang Tri",
+      "gender": "Male",
+      "customerCode": "KH-008",
+      "id": 5
     }
   ],
   "contract": [
