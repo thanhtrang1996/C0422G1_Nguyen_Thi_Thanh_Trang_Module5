@@ -17,4 +17,6 @@ public interface IQuanLyService {
 
 
   Page<QuanLy> findAllPage(Pageable pageable,String email);
+
+  void updateQuanLy(QuanLy quanLy);
 }

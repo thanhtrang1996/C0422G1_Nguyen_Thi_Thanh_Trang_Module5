@@ -59,6 +59,7 @@ export class CapNhatComponent implements OnInit {
         email: new FormControl(this.quanLy.email, [Validators.required, Validators.email]),
         gioDi: new FormControl(this.quanLy.gioDi, [Validators.required]),
         gioDen: new FormControl(this.quanLy.gioDen, [Validators.required]),
+        status: new FormControl("false", [Validators.required]),
       }
     );
   }
@@ -74,8 +75,10 @@ export class CapNhatComponent implements OnInit {
   }
 
   submit() {
+    console.log("Value: ",this.quanLyForm.value);
     if (this.quanLyForm.valid) {
         const quanLy = this.quanLyForm.value;
+      console.log(quanLy);
         this.quanLyService.upDate(quanLy).subscribe(() => {
           this.router.navigateByUrl('').then(() => {
             this.toastrService.success('Cập nhật thành công');

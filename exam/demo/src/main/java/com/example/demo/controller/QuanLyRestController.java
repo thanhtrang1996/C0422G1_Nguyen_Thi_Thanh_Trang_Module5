@@ -50,11 +50,8 @@ public class QuanLyRestController {
   @PatchMapping("/update")
   public ResponseEntity<Void> update(
     @RequestBody QuanLy quanLy) {
-    try {
-      this.quanLyService.saveQuanLy(quanLy);
-    } catch (Exception e) {
-      return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-    }
+      this.quanLyService.updateQuanLy(quanLy);
+
     return new ResponseEntity<>(HttpStatus.OK);
   }
   @PostMapping("/add")

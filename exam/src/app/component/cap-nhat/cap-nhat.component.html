@@ -82,6 +82,7 @@
             <div class="mb-3 text-danger" *ngIf="quanLyForm.controls.gioDen.touched && quanLyForm.controls.gioDen.hasError('required')">
               Bạn không được để trống !!!
             </div>
+            <input type="hidden" formGroupName="status">
             <br>
             <div class="text-center">
               <button class="btn btn-primary" type="submit">Lưu thay đổi</button>

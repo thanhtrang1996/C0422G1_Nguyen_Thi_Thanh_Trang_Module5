@@ -37,7 +37,12 @@ public class QuanLyService implements IQuanLyService {
   }
 
   @Override
+  public void updateQuanLy(QuanLy quanLy) {
+     quanLyRepository.updateQuanLy(quanLy);
+  }
+
+  @Override
   public void saveQuanLy(QuanLy quanLy) {
-    quanLyRepository.saveQuanLy(quanLy.getEmail(),quanLy.getGioDen(),quanLy.getGioDi(), quanLy.getLoaiXe(), quanLy.getSoDienThoai(), quanLy.getSoXe(), quanLy.getTenNhaXe(), quanLy.getDiemDi().getId(), quanLy.getDiemDen().getId(), quanLy.getStatus());
+    quanLyRepository.saveQuanLy(quanLy);
   }
 }

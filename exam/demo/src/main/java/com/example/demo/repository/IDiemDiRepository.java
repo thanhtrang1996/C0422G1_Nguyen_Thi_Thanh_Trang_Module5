@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface IDiemDiRepository extends JpaRepository<DiemDi,Integer> {
-  @Query(value = "SELECT * FROM quanly.diem_di;",nativeQuery = true)
+  @Query(value = "SELECT * FROM diem_di;",nativeQuery = true)
   List<DiemDi> getAllDiemDi();
 
 }
