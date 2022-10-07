@@ -10,8 +10,8 @@ const API_URL = `${environment.apiUrl}`
 export class QuanLyService {
 
   constructor(private http:HttpClient) { }
-  getAll():Observable<any>{
-    return this.http.get(`http://localhost:8080/quanLy/list`)
+  getAll(page:number):Observable<any>{
+    return this.http.get(`http://localhost:8080/quanLy/list?page=/${page}` )
   }
 
   upDate(quanLy:QuanLy):Observable<any>{

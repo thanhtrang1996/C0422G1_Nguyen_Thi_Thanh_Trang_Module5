@@ -86,12 +86,10 @@ export class CapNhatComponent implements OnInit {
         }, error => {
           console.log(error);
         });
-
     } else {
       this.toastrService.warning('Bạn phải nhập đúng');
     }
   }
-
   get email() {
     return this.quanLyForm.get('email');
   }

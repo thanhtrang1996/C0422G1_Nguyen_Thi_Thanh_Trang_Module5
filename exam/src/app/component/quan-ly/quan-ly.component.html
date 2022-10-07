@@ -44,6 +44,17 @@
   </tr>
   </tbody>
 </table>
+<nav>
+  <ul class="pagination">
+    <li class="page-item">
+      <button class="page-link" (click)="getAll(page - 1)">Previous</button>
+    </li>
+    <li class="page-item">
+      <a class="page-link" (click)="getAll(page + 1)">Next</a>
+    </li>
+  </ul>
+</nav>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
